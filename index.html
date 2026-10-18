@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ПЕЧАТНЯ — визитки, листовки, наклейки за 24 часа</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--y:#ffe135;--p:#ff7ab6;--b:#7cc8ff;--g:#6ee7b7;--k:#111;--bg:#fffaf0}
+*{box-sizing:border-box}
+body{margin:0;font:500 17px/1.5 Rubik,Arial,sans-serif;color:var(--k);background:var(--bg)}
+a{color:inherit}
+.box{border:3px solid var(--k);box-shadow:6px 6px 0 var(--k);background:#fff}
+.btn{display:inline-block;border:3px solid var(--k);background:var(--y);box-shadow:4px 4px 0 var(--k);padding:12px 22px;font:900 17px Rubik;text-decoration:none;cursor:pointer;transition:transform .08s,box-shadow .08s;color:var(--k)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--k)}
+.btn:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--k)}
+:focus-visible{outline:4px solid var(--b);outline-offset:3px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 4vw;border-bottom:3px solid var(--k);background:#fff;position:sticky;top:0;z-index:5}
+.logo{font:900 26px Rubik;letter-spacing:-.03em;background:var(--k);color:var(--y);padding:2px 10px;transform:rotate(-2deg);text-decoration:none}
+nav .links a{margin-left:18px;font-weight:800;text-decoration:none}
+nav .links a:hover{background:var(--y)}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;padding:60px 4vw;align-items:center}
+.hero h1{font:900 clamp(44px,7.5vw,104px)/.92 Rubik;letter-spacing:-.04em;margin:0}
+.hero h1 mark{background:var(--p);padding:0 .1em;box-decoration-break:clone}
+.hero p{font-size:20px;max-width:30em}
+.sticker{display:inline-block;background:var(--g);border:3px solid var(--k);border-radius:99px;padding:6px 16px;font-weight:900;transform:rotate(3deg);margin-bottom:18px}
+.collage{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.collage .box{padding:8px;transform:rotate(var(--r))}
+.collage img{width:100%;display:block}
+.marquee{border-block:3px solid var(--k);background:var(--k);color:var(--y);overflow:hidden;white-space:nowrap;font:900 24px Rubik;padding:10px 0}
+.marquee span{display:inline-block;animation:run 22s linear infinite;padding-right:40px}
+@keyframes run{to{transform:translateX(-50%)}}
+section{padding:70px 4vw}
+h2{font:900 clamp(34px,5vw,60px)/1 Rubik;letter-spacing:-.03em;margin:0 0 30px}
+.calc{display:grid;grid-template-columns:1fr 360px;gap:30px;align-items:start}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+.products label input{position:absolute;opacity:0}
+.products label span{display:block;border:3px solid var(--k);background:#fff;padding:10px;text-align:center;font-weight:800;cursor:pointer;box-shadow:4px 4px 0 var(--k)}
+.products img{width:100%;height:80px;object-fit:contain}
+.products input:checked+span{background:var(--y);transform:translate(2px,2px);box-shadow:2px 2px 0 var(--k)}
+.products input:focus-visible+span{outline:4px solid var(--b)}
+.field{margin-bottom:18px}
+.field b{display:block;margin-bottom:8px;font-weight:900}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label input{position:absolute;opacity:0}
+.chips label span{display:block;border:3px solid var(--k);padding:6px 14px;background:#fff;cursor:pointer;font-weight:800}
+.chips input:checked+span{background:var(--k);color:var(--y)}
+.chips input:focus-visible+span{outline:4px solid var(--b)}
+.order{padding:24px;background:var(--y);position:sticky;top:90px}
+.order .price{font:900 54px/1 Rubik;letter-spacing:-.03em;margin:6px 0}
+.order small{display:block;font-weight:500}
+.drop{border:3px dashed var(--k);padding:22px;text-align:center;background:#fff;cursor:pointer;margin:16px 0}
+.drop.over{background:var(--g)}
+.order input[type=text],.order input[type=tel]{width:100%;font:inherit;border:3px solid var(--k);padding:10px;margin-bottom:10px}
+.order .btn{width:100%;background:var(--p)}
+.err{font-weight:900;color:#b00020;min-height:1.4em;margin:0 0 8px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.steps .box{padding:24px}
+.steps .n{font:900 64px/1 Rubik;-webkit-text-stroke:3px var(--k);color:transparent}
+.faq details{border:3px solid var(--k);background:#fff;margin-bottom:12px;box-shadow:4px 4px 0 var(--k)}
+.faq summary{padding:16px 20px;font-weight:900;cursor:pointer}
+.faq p{padding:0 20px 16px;margin:0}
+footer{background:var(--k);color:#fff;padding:40px 4vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer b{color:var(--y);font-size:22px}
+@media(max-width:900px){.hero,.calc{grid-template-columns:1fr}.products{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}nav .links{display:none}.order{position:static}}
+@media(prefers-reduced-motion:reduce){.marquee span{animation:none}.btn{transition:none}}
+</style>
+</head>
+<body>
+<nav><a class="logo" href="#">ПЕЧАТНЯ</a><div class="links"><a href="#calc">Цены</a><a href="#how">Как работаем</a><a href="#faq">Вопросы</a></div><a class="btn" href="#calc">Заказать</a></nav>
+
+<header class="hero">
+  <div>
+    <span class="sticker">⚡ Готово завтра к 12:00</span>
+    <h1>Печатаем <mark>громко</mark>, быстро и без макетного ада</h1>
+    <p>Визитки, листовки, наклейки и постеры от 100 штук. Загрузите файл, увидите цену сразу, а дизайнер бесплатно проверит макет перед печатью.</p>
+    <a class="btn" href="#calc">Посчитать заказ →</a>
+  </div>
+  <div class="collage">
+    <div class="box" style="--r:-3deg"><img src="img/cards.svg" alt="Визитки"></div>
+    <div class="box" style="--r:2deg;background:var(--b)"><img src="img/stickers.svg" alt="Наклейки"></div>
+    <div class="box" style="--r:4deg;background:var(--g)"><img src="img/flyers.svg" alt="Листовки"></div>
+    <div class="box" style="--r:-2deg;background:var(--p)"><img src="img/posters.svg" alt="Постеры"></div>
+  </div>
+</header>
+<div class="marquee" aria-hidden="true"><span>ВИЗИТКИ ★ ЛИСТОВКИ ★ НАКЛЕЙКИ ★ ПОСТЕРЫ ★ БЕСПЛАТНАЯ ПРОВЕРКА МАКЕТА ★ ДОСТАВКА ПО МОСКВЕ ★ ВИЗИТКИ ★ ЛИСТОВКИ ★ НАКЛЕЙКИ ★ ПОСТЕРЫ ★ БЕСПЛАТНАЯ ПРОВЕРКА МАКЕТА ★ ДОСТАВКА ПО МОСКВЕ ★ </span></div>
+
+<section id="calc">
+  <h2>Цена — сразу</h2>
+  <form class="calc" id="calcForm" novalidate>
+    <div>
+      <div class="products" role="radiogroup" aria-label="Что печатаем" id="products"></div>
+      <div class="field"><b>Тираж</b><div class="chips" id="qty"></div></div>
+      <div class="field"><b>Бумага</b><div class="chips" id="paper"></div></div>
+      <div class="field"><b>Печать</b><div class="chips" id="sides"></div></div>
+      <div class="field"><b>Срочность</b><div class="chips" id="speed"></div></div>
+    </div>
+    <aside class="order box" aria-live="polite">
+      <b id="summary"></b>
+      <div class="price" id="price"></div>
+      <small id="per"></small>
+      <label class="drop" id="drop"><span id="dropText">📎 Перетащите макет сюда или нажмите<br><small>PDF, AI, PNG, JPG до 50 МБ</small></span><input type="file" id="file" hidden accept=".pdf,.ai,.png,.jpg,.jpeg,.psd,.cdr"></label>
+      <p class="err" id="fileErr" role="alert"></p>
+      <input type="text" name="name" placeholder="Как вас зовут" autocomplete="name" aria-label="Имя">
+      <input type="tel" name="phone" placeholder="Телефон" autocomplete="tel" aria-label="Телефон">
+      <p class="err" id="err" role="alert"></p>
+      <button class="btn" type="submit">Отправить в печать</button>
+    </aside>
+  </form>
+</section>
+
+<section id="how" style="background:var(--b);border-block:3px solid var(--k)">
+  <h2>Как это работает</h2>
+  <div class="steps">
+    <div class="box"><div class="n">01</div><h3>Загрузите файл</h3><p>Нет макета? Пришлите логотип и текст, соберём за 990 ₽.</p></div>
+    <div class="box"><div class="n">02</div><h3>Проверим и позвоним</h3><p>Дизайнер смотрит вылеты, разрешение и цвета. Если что-то не так, исправим вместе.</p></div>
+    <div class="box"><div class="n">03</div><h3>Заберите тираж</h3><p>Самовывоз у метро «Курская» или курьер по Москве от 350 ₽.</p></div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <h2>Вопросы</h2>
+  <details><summary>В каком формате присылать макет?</summary><p>Лучше всего PDF с вылетами 2 мм и шрифтами в кривых. PNG и JPG тоже подойдут, если разрешение от 300 dpi.</p></details>
+  <details><summary>Можно напечатать меньше 100 штук?</summary><p>Да, но цена за штуку будет выше: печатная машина требует одинаковой настройки для любого тиража.</p></details>
+  <details><summary>Как оплатить?</summary><p>Картой по ссылке после проверки макета или по счёту для юрлиц.</p></details>
+</section>
+
+<footer><div><b>ПЕЧАТНЯ</b><br>Москва, ул. Земляной Вал, 9 · пн–сб 9:00–21:00</div><div>hello@pechatnya.example<br>© 2026</div></footer>
+
+<script>
+var PRODUCTS = { cards: ['Визитки', 'img/cards.svg', 1.6], flyers: ['Листовки A6', 'img/flyers.svg', 4.2], stickers: ['Наклейки', 'img/stickers.svg', 5.5], posters: ['Постеры A3', 'img/posters.svg', 38] };
+var QTY = [100, 300, 500, 1000, 3000];
+var PAPER = { std: ['Стандарт 300 г', 1], matte: ['Матовая софт-тач', 1.45], kraft: ['Крафт', 1.3], design: ['Дизайнерская', 1.9] };
+var SIDES = { one: ['С одной стороны', 1], two: ['С двух сторон', 1.4] };
+var SPEED = { normal: ['3 дня', 1], fast: ['Завтра', 1.35], now: ['Сегодня до 20:00', 1.8] };
+
+function chips(id, name, obj, first) {
+  document.getElementById(id).innerHTML = Object.keys(obj).map(function (k) {
+    var label = Array.isArray(obj[k]) ? obj[k][0] : obj[k];
+    return '<label><input type="radio" name="' + name + '" value="' + k + '"' + (k === first ? ' checked' : '') + '><span>' + label + '</span></label>';
+  }).join('');
+}
+document.getElementById('products').innerHTML = Object.keys(PRODUCTS).map(function (k, i) {
+  return '<label><input type="radio" name="product" value="' + k + '"' + (i === 0 ? ' checked' : '') + '><span><img src="' + PRODUCTS[k][1] + '" alt="">' + PRODUCTS[k][0] + '</span></label>';
+}).join('');
+var q = {}; QTY.forEach(function (n) { q[n] = n + ' шт'; });
+chips('qty', 'qty', q, '500'); chips('paper', 'paper', PAPER, 'std'); chips('sides', 'sides', SIDES, 'two'); chips('speed', 'speed', SPEED, 'normal');
+
+var form = document.getElementById('calcForm');
+function calc() {
+  var p = form.product.value, n = +form.qty.value;
+  // чем больше тираж, тем дешевле штука: настройка машины размазывается по тиражу
+  var discount = Math.pow(100 / n, 0.32);
+  var unit = PRODUCTS[p][2] * PAPER[form.paper.value][1] * SIDES[form.sides.value][1] * SPEED[form.speed.value][1] * discount;
+  var total = Math.max(490, Math.round(unit * n / 10) * 10);
+  document.getElementById('summary').textContent = PRODUCTS[p][0] + ', ' + n + ' шт';
+  document.getElementById('price').textContent = total.toLocaleString('ru-RU') + ' ₽';
+  document.getElementById('per').textContent = (total / n).toFixed(2).replace('.', ',') + ' ₽ за штуку · ' + SPEED[form.speed.value][0].toLowerCase();
+}
+form.addEventListener('change', calc);
+
+var drop = document.getElementById('drop'), file = document.getElementById('file');
+var dropText = document.getElementById('dropText'), fileErr = document.getElementById('fileErr'), dropDefault = dropText.innerHTML;
+function showFile(f) {
+  if (!f) return;
+  // Меняем только подпись: input остаётся в зоне, слишком большой файл из него убираем
+  if (f.size > 50 * 1024 * 1024) {
+    file.value = ''; dropText.innerHTML = dropDefault;
+    fileErr.textContent = '❌ Файл больше 50 МБ. Пришлите ссылку на облако в комментарии.';
+    return;
+  }
+  fileErr.textContent = '';
+  dropText.innerHTML = '✅ <b>' + f.name.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</b><br><small>' + (f.size / 1024 / 1024).toFixed(1).replace('.', ',') + ' МБ · нажмите, чтобы заменить</small>';
+}
+file.addEventListener('change', function () { showFile(file.files[0]); });
+['dragenter', 'dragover'].forEach(function (ev) { drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.add('over'); }); });
+['dragleave', 'drop'].forEach(function (ev) { drop.addEventListener(ev, function () { drop.classList.remove('over'); }); });
+drop.addEventListener('drop', function (e) { e.preventDefault(); var f = e.dataTransfer.files[0]; if (f) { var dt = new DataTransfer(); dt.items.add(f); file.files = dt.files; showFile(f); } });
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  var err = document.getElementById('err'), digits = form.phone.value.replace(/\D/g, '');
+  if (form.name.value.trim().length < 2) return err.textContent = 'Напишите имя';
+  if (digits.length < 10) return err.textContent = 'Нужен телефон, чтобы согласовать макет';
+  err.textContent = '';
+  form.querySelector('.order').innerHTML = '<h3 style="font-size:28px;margin:0">Заказ принят! 🎉</h3><p>' + document.getElementById('summary').textContent + ' за ' + document.getElementById('price').textContent +
+    '.</p><p>Дизайнер проверит ' + (file.files[0] ? 'макет' : 'заказ') + ' и позвонит в течение 30 минут в рабочее время.</p>';
+});
+calc();
+</script>
+</body>
+</html>
